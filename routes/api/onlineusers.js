@@ -89,7 +89,7 @@ router.post("/", authenticateToken, (req, res) => {
     console.log(`length:`, stateEntry[0]);
     console.log(`lengthTokrn:`, token);
     
-    if (stateEntry[0].length === 0) {
+    if (stateEntry[0] === undefined) {
       return res.status(404).json({
         msg: `Invalid Request! Unauthenticated User! Please Login first!`,
       });
